@@ -217,6 +217,7 @@ import express from "express";
 import { protect, authorizeRole } from "../middleware/authmiddleware.js";
 import Transaction from "../middleware/models/Transactions.js";
 import Loan from "../middleware/models/Loan.js";
+import Deposit from "../middleware/models/Deposit.js";
 
 const router = express.Router();
 
