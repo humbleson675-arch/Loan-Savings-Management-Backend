@@ -8,7 +8,7 @@ export const sendVerificationEmail = async (email) => {
 
     // Create verification link BEFORE using it
   
-const verificationLink = `https://unity-finance-system.onrender.com/sign`;
+const verificationLink = `https://unity-finance-system.onrender.com/verify/${token}`;
 
     // Configure transporter
     const transporter = nodemailer.createTransport({
