@@ -8,9 +8,9 @@ export const sendVerificationEmail = async (email) => {
 
     // Create verification link BEFORE using it
   
-const verificationLink = `https://unity-finance-system.onrender.com/verify/${token}`;
+const verificationLink = `https://unity-finance-system.onrender.com/sign`;
 
-    // Configure transporter
+ // Configure transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
