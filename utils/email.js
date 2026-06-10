@@ -3,13 +3,14 @@ import jwt from "jsonwebtoken";
 
 export const sendVerificationEmail = async (email) => {
   try {
-    // 1️⃣ Create token for verification
+    //Create token for verification
     const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
-    // 2️⃣ Create verification link BEFORE using it
-    const verificationLink = `http://localhost:8080/api/users/verify/${token}`;
+    // Create verification link BEFORE using it
+  
+const verificationLink = `https://unity-finance-system.onrender.com/sign`;
 
-    // 3️⃣ Configure transporter
+    // Configure transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -18,7 +19,7 @@ export const sendVerificationEmail = async (email) => {
       },
     });
 
-    // 4️⃣ Send email
+    // Send email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
